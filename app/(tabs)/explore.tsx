@@ -6,6 +6,8 @@ import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { IconSymbol } from '@/components/ui/IconSymbol';
+import { router } from 'expo-router';
+import { Button } from 'react-native';
 
 export default function TabTwoScreen() {
   return (
@@ -82,6 +84,7 @@ export default function TabTwoScreen() {
           the powerful <ThemedText type="defaultSemiBold">react-native-reanimated</ThemedText>{' '}
           library to create a waving hand animation.
         </ThemedText>
+        <Button title="Go to Signup" onPress={() => router.push('../(auth)/welcome')} />
         {Platform.select({
           ios: (
             <ThemedText>

@@ -8,12 +8,11 @@ import { authStyles } from '../authStyles';
 
 export default function NameScreen() {
   const router = useRouter();
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const [Nickname, setNickname] = useState('');
 
   const handleNext = () => {
-    if (firstName.trim() && lastName.trim()) {
-      router.push('/(auth)/sign-up/nickname');
+    if (Nickname.trim()) {
+      router.push('/(auth)/sign-up/email');
     }
   };
 
@@ -21,29 +20,22 @@ export default function NameScreen() {
     <ThemedView style={authStyles.container}>
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={authStyles.inner}>
         <ThemedText type="title" style={authStyles.name_header}>
-          What’s your name?
+          Do you go by a preferred nickname?
         </ThemedText>
 
         <TextInput
           style={[authStyles.input, {marginRight: 8}]}
-          placeholder="First Name"
+          placeholder="Nickname"
           placeholderTextColor="#999"
-          onChangeText={setFirstName}
-          value={firstName}
+          onChangeText={setNickname}
+          value={Nickname}
         />
 
-        <TextInput
-          style={[authStyles.input, {marginRight: 8}]}
-          placeholder="Last Name"
-          placeholderTextColor="#999"
-          onChangeText={setLastName}
-          value={lastName}
-        />
-
-        <TouchableOpacity style={[authStyles.button, !(firstName && lastName) && authStyles.buttonDisabled]} onPress={handleNext} disabled={!(firstName && lastName)}>
+        <TouchableOpacity style={[authStyles.button, !Nickname && authStyles.buttonDisabled]} onPress={handleNext} disabled={!Nickname}>
           <ThemedText style={authStyles.buttonText}>Next</ThemedText>
         </TouchableOpacity>
       </KeyboardAvoidingView>
     </ThemedView>
   );
 }
+

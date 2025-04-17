@@ -10,15 +10,21 @@ datasource db {
 
 // Add your models here
 model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
-  password  String
-  name      String
-  age       Int
-  gender    String
-  bio       String
-  location  String
-  pfpurl    String
-  interests String[]
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  firstName  String
+  lastName   String
+  nickname   String?
+  email      String   @unique
+  password   String
+  phone      String?  @unique
+  interests  String[]
+  pfpurl     String
+  age        Int
+  gender     String
+  bio        String
+  location   String
+  isVerified Boolean  @default(false)
 }
