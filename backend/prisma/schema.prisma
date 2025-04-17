@@ -16,6 +16,9 @@ model User {
   name      String
   age       Int
   gender    String
+  bio       String
+  location  String
+  pfpurl    String
   interests String[]
   createdAt DateTime @default(now())
 }

@@ -898,6 +898,9 @@ export namespace Prisma {
     name: string | null
     age: number | null
     gender: string | null
+    bio: string | null
+    location: string | null
+    pfpurl: string | null
     createdAt: Date | null
   }
 
@@ -908,6 +911,9 @@ export namespace Prisma {
     name: string | null
     age: number | null
     gender: string | null
+    bio: string | null
+    location: string | null
+    pfpurl: string | null
     createdAt: Date | null
   }
 
@@ -918,6 +924,9 @@ export namespace Prisma {
     name: number
     age: number
     gender: number
+    bio: number
+    location: number
+    pfpurl: number
     interests: number
     createdAt: number
     _all: number
@@ -941,6 +950,9 @@ export namespace Prisma {
     name?: true
     age?: true
     gender?: true
+    bio?: true
+    location?: true
+    pfpurl?: true
     createdAt?: true
   }
 
@@ -951,6 +963,9 @@ export namespace Prisma {
     name?: true
     age?: true
     gender?: true
+    bio?: true
+    location?: true
+    pfpurl?: true
     createdAt?: true
   }
 
@@ -961,6 +976,9 @@ export namespace Prisma {
     name?: true
     age?: true
     gender?: true
+    bio?: true
+    location?: true
+    pfpurl?: true
     interests?: true
     createdAt?: true
     _all?: true
@@ -1059,6 +1077,9 @@ export namespace Prisma {
     name: string
     age: number
     gender: string
+    bio: string
+    location: string
+    pfpurl: string
     interests: string[]
     createdAt: Date
     _count: UserCountAggregateOutputType | null
@@ -1089,6 +1110,9 @@ export namespace Prisma {
     name?: boolean
     age?: boolean
     gender?: boolean
+    bio?: boolean
+    location?: boolean
+    pfpurl?: boolean
     interests?: boolean
     createdAt?: boolean
   }, ExtArgs["result"]["user"]>
@@ -1100,6 +1124,9 @@ export namespace Prisma {
     name?: boolean
     age?: boolean
     gender?: boolean
+    bio?: boolean
+    location?: boolean
+    pfpurl?: boolean
     interests?: boolean
     createdAt?: boolean
   }, ExtArgs["result"]["user"]>
@@ -1111,6 +1138,9 @@ export namespace Prisma {
     name?: boolean
     age?: boolean
     gender?: boolean
+    bio?: boolean
+    location?: boolean
+    pfpurl?: boolean
     interests?: boolean
     createdAt?: boolean
   }, ExtArgs["result"]["user"]>
@@ -1122,11 +1152,14 @@ export namespace Prisma {
     name?: boolean
     age?: boolean
     gender?: boolean
+    bio?: boolean
+    location?: boolean
+    pfpurl?: boolean
     interests?: boolean
     createdAt?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "password" | "name" | "age" | "gender" | "interests" | "createdAt", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "password" | "name" | "age" | "gender" | "bio" | "location" | "pfpurl" | "interests" | "createdAt", ExtArgs["result"]["user"]>
 
   export type $UserPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "User"
@@ -1138,6 +1171,9 @@ export namespace Prisma {
       name: string
       age: number
       gender: string
+      bio: string
+      location: string
+      pfpurl: string
       interests: string[]
       createdAt: Date
     }, ExtArgs["result"]["user"]>
@@ -1569,6 +1605,9 @@ export namespace Prisma {
     readonly name: FieldRef<"User", 'String'>
     readonly age: FieldRef<"User", 'Int'>
     readonly gender: FieldRef<"User", 'String'>
+    readonly bio: FieldRef<"User", 'String'>
+    readonly location: FieldRef<"User", 'String'>
+    readonly pfpurl: FieldRef<"User", 'String'>
     readonly interests: FieldRef<"User", 'String[]'>
     readonly createdAt: FieldRef<"User", 'DateTime'>
   }
@@ -1958,6 +1997,9 @@ export namespace Prisma {
     name: 'name',
     age: 'age',
     gender: 'gender',
+    bio: 'bio',
+    location: 'location',
+    pfpurl: 'pfpurl',
     interests: 'interests',
     createdAt: 'createdAt'
   };
@@ -2055,6 +2097,9 @@ export namespace Prisma {
     name?: StringFilter<"User"> | string
     age?: IntFilter<"User"> | number
     gender?: StringFilter<"User"> | string
+    bio?: StringFilter<"User"> | string
+    location?: StringFilter<"User"> | string
+    pfpurl?: StringFilter<"User"> | string
     interests?: StringNullableListFilter<"User">
     createdAt?: DateTimeFilter<"User"> | Date | string
   }
@@ -2066,6 +2111,9 @@ export namespace Prisma {
     name?: SortOrder
     age?: SortOrder
     gender?: SortOrder
+    bio?: SortOrder
+    location?: SortOrder
+    pfpurl?: SortOrder
     interests?: SortOrder
     createdAt?: SortOrder
   }
@@ -2080,6 +2128,9 @@ export namespace Prisma {
     name?: StringFilter<"User"> | string
     age?: IntFilter<"User"> | number
     gender?: StringFilter<"User"> | string
+    bio?: StringFilter<"User"> | string
+    location?: StringFilter<"User"> | string
+    pfpurl?: StringFilter<"User"> | string
     interests?: StringNullableListFilter<"User">
     createdAt?: DateTimeFilter<"User"> | Date | string
   }, "id" | "email">
@@ -2091,6 +2142,9 @@ export namespace Prisma {
     name?: SortOrder
     age?: SortOrder
     gender?: SortOrder
+    bio?: SortOrder
+    location?: SortOrder
+    pfpurl?: SortOrder
     interests?: SortOrder
     createdAt?: SortOrder
     _count?: UserCountOrderByAggregateInput
@@ -2110,6 +2164,9 @@ export namespace Prisma {
     name?: StringWithAggregatesFilter<"User"> | string
     age?: IntWithAggregatesFilter<"User"> | number
     gender?: StringWithAggregatesFilter<"User"> | string
+    bio?: StringWithAggregatesFilter<"User"> | string
+    location?: StringWithAggregatesFilter<"User"> | string
+    pfpurl?: StringWithAggregatesFilter<"User"> | string
     interests?: StringNullableListFilter<"User">
     createdAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
   }
@@ -2120,6 +2177,9 @@ export namespace Prisma {
     name: string
     age: number
     gender: string
+    bio: string
+    location: string
+    pfpurl: string
     interests?: UserCreateinterestsInput | string[]
     createdAt?: Date | string
   }
@@ -2131,6 +2191,9 @@ export namespace Prisma {
     name: string
     age: number
     gender: string
+    bio: string
+    location: string
+    pfpurl: string
     interests?: UserCreateinterestsInput | string[]
     createdAt?: Date | string
   }
@@ -2141,6 +2204,9 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     age?: IntFieldUpdateOperationsInput | number
     gender?: StringFieldUpdateOperationsInput | string
+    bio?: StringFieldUpdateOperationsInput | string
+    location?: StringFieldUpdateOperationsInput | string
+    pfpurl?: StringFieldUpdateOperationsInput | string
     interests?: UserUpdateinterestsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -2152,6 +2218,9 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     age?: IntFieldUpdateOperationsInput | number
     gender?: StringFieldUpdateOperationsInput | string
+    bio?: StringFieldUpdateOperationsInput | string
+    location?: StringFieldUpdateOperationsInput | string
+    pfpurl?: StringFieldUpdateOperationsInput | string
     interests?: UserUpdateinterestsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -2163,6 +2232,9 @@ export namespace Prisma {
     name: string
     age: number
     gender: string
+    bio: string
+    location: string
+    pfpurl: string
     interests?: UserCreateinterestsInput | string[]
     createdAt?: Date | string
   }
@@ -2173,6 +2245,9 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     age?: IntFieldUpdateOperationsInput | number
     gender?: StringFieldUpdateOperationsInput | string
+    bio?: StringFieldUpdateOperationsInput | string
+    location?: StringFieldUpdateOperationsInput | string
+    pfpurl?: StringFieldUpdateOperationsInput | string
     interests?: UserUpdateinterestsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -2184,6 +2259,9 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     age?: IntFieldUpdateOperationsInput | number
     gender?: StringFieldUpdateOperationsInput | string
+    bio?: StringFieldUpdateOperationsInput | string
+    location?: StringFieldUpdateOperationsInput | string
+    pfpurl?: StringFieldUpdateOperationsInput | string
     interests?: UserUpdateinterestsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -2240,6 +2318,9 @@ export namespace Prisma {
     name?: SortOrder
     age?: SortOrder
     gender?: SortOrder
+    bio?: SortOrder
+    location?: SortOrder
+    pfpurl?: SortOrder
     interests?: SortOrder
     createdAt?: SortOrder
   }
@@ -2256,6 +2337,9 @@ export namespace Prisma {
     name?: SortOrder
     age?: SortOrder
     gender?: SortOrder
+    bio?: SortOrder
+    location?: SortOrder
+    pfpurl?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -2266,6 +2350,9 @@ export namespace Prisma {
     name?: SortOrder
     age?: SortOrder
     gender?: SortOrder
+    bio?: SortOrder
+    location?: SortOrder
+    pfpurl?: SortOrder
     createdAt?: SortOrder
   }
 
