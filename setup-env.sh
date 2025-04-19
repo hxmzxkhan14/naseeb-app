@@ -11,6 +11,8 @@ npm install @reduxjs/toolkit react-redux
 
 # Backend dependencies
 npm install express cors dotenv bcrypt jsonwebtoken prisma @prisma/client
+npm install --save-dev typescript ts-node @types/node
+
 
 echo "🌱 Setting up environment variables..."
 cat <<EOL > .env
