@@ -6,6 +6,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
 import { Tabs } from 'expo-router';
+import { UserSignupProvider } from '@/context/UserSignupContext';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
 

@@ -904,6 +904,7 @@ export namespace Prisma {
     gender: string | null
     bio: string | null
     location: string | null
+    bday: Date | null
     isVerified: boolean | null
   }
 
@@ -922,6 +923,7 @@ export namespace Prisma {
     gender: string | null
     bio: string | null
     location: string | null
+    bday: Date | null
     isVerified: boolean | null
   }
 
@@ -941,6 +943,7 @@ export namespace Prisma {
     gender: number
     bio: number
     location: number
+    bday: number
     isVerified: number
     _all: number
   }
@@ -969,6 +972,7 @@ export namespace Prisma {
     gender?: true
     bio?: true
     location?: true
+    bday?: true
     isVerified?: true
   }
 
@@ -987,6 +991,7 @@ export namespace Prisma {
     gender?: true
     bio?: true
     location?: true
+    bday?: true
     isVerified?: true
   }
 
@@ -1006,6 +1011,7 @@ export namespace Prisma {
     gender?: true
     bio?: true
     location?: true
+    bday?: true
     isVerified?: true
     _all?: true
   }
@@ -1112,6 +1118,7 @@ export namespace Prisma {
     gender: string
     bio: string
     location: string
+    bday: Date | null
     isVerified: boolean
     _count: UserCountAggregateOutputType | null
     _avg: UserAvgAggregateOutputType | null
@@ -1150,6 +1157,7 @@ export namespace Prisma {
     gender?: boolean
     bio?: boolean
     location?: boolean
+    bday?: boolean
     isVerified?: boolean
   }, ExtArgs["result"]["user"]>
 
@@ -1169,6 +1177,7 @@ export namespace Prisma {
     gender?: boolean
     bio?: boolean
     location?: boolean
+    bday?: boolean
     isVerified?: boolean
   }, ExtArgs["result"]["user"]>
 
@@ -1188,6 +1197,7 @@ export namespace Prisma {
     gender?: boolean
     bio?: boolean
     location?: boolean
+    bday?: boolean
     isVerified?: boolean
   }, ExtArgs["result"]["user"]>
 
@@ -1207,10 +1217,11 @@ export namespace Prisma {
     gender?: boolean
     bio?: boolean
     location?: boolean
+    bday?: boolean
     isVerified?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "updatedAt" | "firstName" | "lastName" | "nickname" | "email" | "password" | "phone" | "interests" | "pfpurl" | "age" | "gender" | "bio" | "location" | "isVerified", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "updatedAt" | "firstName" | "lastName" | "nickname" | "email" | "password" | "phone" | "interests" | "pfpurl" | "age" | "gender" | "bio" | "location" | "bday" | "isVerified", ExtArgs["result"]["user"]>
 
   export type $UserPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "User"
@@ -1231,6 +1242,7 @@ export namespace Prisma {
       gender: string
       bio: string
       location: string
+      bday: Date | null
       isVerified: boolean
     }, ExtArgs["result"]["user"]>
     composites: {}
@@ -1670,6 +1682,7 @@ export namespace Prisma {
     readonly gender: FieldRef<"User", 'String'>
     readonly bio: FieldRef<"User", 'String'>
     readonly location: FieldRef<"User", 'String'>
+    readonly bday: FieldRef<"User", 'DateTime'>
     readonly isVerified: FieldRef<"User", 'Boolean'>
   }
     
@@ -2067,6 +2080,7 @@ export namespace Prisma {
     gender: 'gender',
     bio: 'bio',
     location: 'location',
+    bday: 'bday',
     isVerified: 'isVerified'
   };
 
@@ -2187,6 +2201,7 @@ export namespace Prisma {
     gender?: StringFilter<"User"> | string
     bio?: StringFilter<"User"> | string
     location?: StringFilter<"User"> | string
+    bday?: DateTimeNullableFilter<"User"> | Date | string | null
     isVerified?: BoolFilter<"User"> | boolean
   }
 
@@ -2206,6 +2221,7 @@ export namespace Prisma {
     gender?: SortOrder
     bio?: SortOrder
     location?: SortOrder
+    bday?: SortOrderInput | SortOrder
     isVerified?: SortOrder
   }
 
@@ -2228,6 +2244,7 @@ export namespace Prisma {
     gender?: StringFilter<"User"> | string
     bio?: StringFilter<"User"> | string
     location?: StringFilter<"User"> | string
+    bday?: DateTimeNullableFilter<"User"> | Date | string | null
     isVerified?: BoolFilter<"User"> | boolean
   }, "id" | "email" | "phone">
 
@@ -2247,6 +2264,7 @@ export namespace Prisma {
     gender?: SortOrder
     bio?: SortOrder
     location?: SortOrder
+    bday?: SortOrderInput | SortOrder
     isVerified?: SortOrder
     _count?: UserCountOrderByAggregateInput
     _avg?: UserAvgOrderByAggregateInput
@@ -2274,6 +2292,7 @@ export namespace Prisma {
     gender?: StringWithAggregatesFilter<"User"> | string
     bio?: StringWithAggregatesFilter<"User"> | string
     location?: StringWithAggregatesFilter<"User"> | string
+    bday?: DateTimeNullableWithAggregatesFilter<"User"> | Date | string | null
     isVerified?: BoolWithAggregatesFilter<"User"> | boolean
   }
 
@@ -2293,6 +2312,7 @@ export namespace Prisma {
     gender: string
     bio: string
     location: string
+    bday?: Date | string | null
     isVerified?: boolean
   }
 
@@ -2312,6 +2332,7 @@ export namespace Prisma {
     gender: string
     bio: string
     location: string
+    bday?: Date | string | null
     isVerified?: boolean
   }
 
@@ -2331,6 +2352,7 @@ export namespace Prisma {
     gender?: StringFieldUpdateOperationsInput | string
     bio?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
+    bday?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     isVerified?: BoolFieldUpdateOperationsInput | boolean
   }
 
@@ -2350,6 +2372,7 @@ export namespace Prisma {
     gender?: StringFieldUpdateOperationsInput | string
     bio?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
+    bday?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     isVerified?: BoolFieldUpdateOperationsInput | boolean
   }
 
@@ -2369,6 +2392,7 @@ export namespace Prisma {
     gender: string
     bio: string
     location: string
+    bday?: Date | string | null
     isVerified?: boolean
   }
 
@@ -2388,6 +2412,7 @@ export namespace Prisma {
     gender?: StringFieldUpdateOperationsInput | string
     bio?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
+    bday?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     isVerified?: BoolFieldUpdateOperationsInput | boolean
   }
 
@@ -2407,6 +2432,7 @@ export namespace Prisma {
     gender?: StringFieldUpdateOperationsInput | string
     bio?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
+    bday?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     isVerified?: BoolFieldUpdateOperationsInput | boolean
   }
 
@@ -2470,6 +2496,17 @@ export namespace Prisma {
     not?: NestedIntFilter<$PrismaModel> | number
   }
 
+  export type DateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
+  }
+
   export type BoolFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
     not?: NestedBoolFilter<$PrismaModel> | boolean
@@ -2496,6 +2533,7 @@ export namespace Prisma {
     gender?: SortOrder
     bio?: SortOrder
     location?: SortOrder
+    bday?: SortOrder
     isVerified?: SortOrder
   }
 
@@ -2518,6 +2556,7 @@ export namespace Prisma {
     gender?: SortOrder
     bio?: SortOrder
     location?: SortOrder
+    bday?: SortOrder
     isVerified?: SortOrder
   }
 
@@ -2536,6 +2575,7 @@ export namespace Prisma {
     gender?: SortOrder
     bio?: SortOrder
     location?: SortOrder
+    bday?: SortOrder
     isVerified?: SortOrder
   }
 
@@ -2609,6 +2649,20 @@ export namespace Prisma {
     _max?: NestedIntFilter<$PrismaModel>
   }
 
+  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
+  }
+
   export type BoolWithAggregatesFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
     not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
@@ -2644,6 +2698,10 @@ export namespace Prisma {
     decrement?: number
     multiply?: number
     divide?: number
+  }
+
+  export type NullableDateTimeFieldUpdateOperationsInput = {
+    set?: Date | string | null
   }
 
   export type BoolFieldUpdateOperationsInput = {
@@ -2698,6 +2756,17 @@ export namespace Prisma {
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
     not?: NestedIntFilter<$PrismaModel> | number
+  }
+
+  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
   }
 
   export type NestedBoolFilter<$PrismaModel = never> = {
@@ -2789,6 +2858,20 @@ export namespace Prisma {
     gt?: number | FloatFieldRefInput<$PrismaModel>
     gte?: number | FloatFieldRefInput<$PrismaModel>
     not?: NestedFloatFilter<$PrismaModel> | number
+  }
+
+  export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
   export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {

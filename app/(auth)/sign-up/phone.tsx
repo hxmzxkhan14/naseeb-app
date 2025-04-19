@@ -10,8 +10,12 @@ import {
 import { ThemedView } from '@/components/ThemedView';
 import { ThemedText } from '@/components/ThemedText';
 import { authStyles } from '../authStyles';
+import { useUserSignup } from '@/context/UserSignupContext';
+import { router } from 'expo-router';
 
 export default function PhoneNumberScreen() {
+  const { updateUserData } = useUserSignup();
+
   const [areaCode, setAreaCode] = useState('');
   const [prefix, setPrefix] = useState('');
   const [lineNumber, setLineNumber] = useState('');
@@ -46,9 +50,11 @@ export default function PhoneNumberScreen() {
   const isPhoneComplete =
     areaCode.length === 3 && prefix.length === 3 && lineNumber.length === 4;
 
+ const phone = `+1${areaCode}${prefix}${lineNumber}`;
   const handleNext = () => {
-    const fullPhone = `+1${areaCode}${prefix}${lineNumber}`;
-    console.log('Submitting phone number:', fullPhone);
+    updateUserData({ phone });
+    router.push('/sign-up/name')
+    console.log('Submitting phone number:', phone);
     // You can now send `fullPhone` to your backend
   };
 

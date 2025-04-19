@@ -4,15 +4,19 @@ import { TextInput, Platform, StyleSheet, KeyboardAvoidingView, TouchableOpacity
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { authStyles } from '../authStyles';
+import { useUserSignup } from '@/context/UserSignupContext';
 
 
 export default function NameScreen() {
+  const { updateUserData } = useUserSignup();
+
   const router = useRouter();
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
 
   const handleNext = () => {
     if (firstName.trim() && lastName.trim()) {
+      updateUserData({ firstName, lastName });
       router.push('/(auth)/sign-up/nickname');
     }
   };

@@ -46,7 +46,7 @@ export const authStyles = StyleSheet.create({
   subtitle: {
     color: '#FFD700',
     fontSize: 24,
-    marginTop: 10,
+    marginTop: 20,
     width: '80%',
     ...Platform.select<TextStyle> ({
         web: {
@@ -62,7 +62,7 @@ export const authStyles = StyleSheet.create({
     backgroundColor: '#FFD700',
     paddingVertical: 15,
     borderRadius: 30,
-    marginTop: 15,
+    marginTop: 5,
     alignItems: 'center',
       },
   buttonText: {
@@ -83,4 +83,38 @@ export const authStyles = StyleSheet.create({
     marginLeft: 4,
     fontSize: 16,
   },
+  oauthButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#333',
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderRadius: 30,
+    marginTop: 5,
+    justifyContent: 'center'
+  },
+  icon: {
+    marginRight: 20,
+  },
+  oauthText: {
+    color: '#fff',
+    fontSize: 16,
+  },
+  oauthContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'relative',
+    width: '100%',
+  },
+  buttonGroup: {
+    gap: 10,
+    marginBottom: 30,
+  },
+  logoIcon: {
+    width: 20,
+    height: 20,
+    marginRight: 10,
+  },
+
 });

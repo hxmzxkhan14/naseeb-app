@@ -133,6 +133,7 @@ exports.Prisma.UserScalarFieldEnum = {
   gender: 'gender',
   bio: 'bio',
   location: 'location',
+  bday: 'bday',
   isVerified: 'isVerified'
 };
 

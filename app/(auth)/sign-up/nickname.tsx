@@ -4,14 +4,18 @@ import { TextInput, Platform, StyleSheet, KeyboardAvoidingView, TouchableOpacity
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { authStyles } from '../authStyles';
+import { useUserSignup } from '@/context/UserSignupContext';
 
 
 export default function NameScreen() {
+  const { updateUserData } = useUserSignup();
+
   const router = useRouter();
   const [Nickname, setNickname] = useState('');
 
   const handleNext = () => {
     if (Nickname.trim()) {
+      updateUserData({ nickname: Nickname });
       router.push('/(auth)/sign-up/email');
     }
   };
